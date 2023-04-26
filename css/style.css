@@ -1,0 +1,63 @@
+html {
+    background-color: lightsteelblue;
+    font-size: 1rem;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+.container {
+}
+
+#header {
+    color: #3f3f3f;
+    background-color: slategray;
+    padding: 2rem;
+    text-align: left;
+}
+
+main {
+    display: flex;
+    width: 80%;
+    margin: auto;
+}
+
+#nav a {
+    color: darkblue;
+    background: palevioletred;
+    width: 13rem;
+    line-height: 3rem;
+    justify-content: space-evenly;
+    padding: 0.8rem;
+    backdrop-filter: blur(2rem);
+}
+
+#nav a:hover {
+    color: #3c6091;
+    background: #a26b83;
+}
+
+#nav a:focus {
+    color: darkblue;
+    background: mediumpurple;
+}
+
+#options {
+    width: 5rem;
+    position: relative;
+}
+
+#options select {
+    display: none;
+}
+
+#options-selected {
+    background-color: #a26b83;
+}
+
+
+#footer {
+    color: #3f3f3f;
+    background-color: #7c90a2;
+    padding: 0.5rem;
+    margin: 1rem;
+    text-align: center;
+}
