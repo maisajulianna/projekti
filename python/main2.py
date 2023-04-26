@@ -1,7 +1,3 @@
-import sys
-import colorama
-from colorama import Fore, Back, Style
-
 import misc
 import start
 import choises
@@ -37,8 +33,9 @@ start_continent = result[1]
 # ensimmäisen matkakohteen valinta
 choises.user_continents(user)
 
+
 print()
-result = choises.travel()
+result = choises.travel(start_continent)
 travel_airport = result[0]
 travel_ident = result[1]
 travel_continent = result[2]

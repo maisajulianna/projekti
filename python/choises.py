@@ -1,3 +1,11 @@
+import misc
+import sys
+import colorama
+from colorama import Fore, Back, Style
+import time
+
+connection = misc.connection()
+
 def continent_name(continent_abbr):
     if continent_abbr == 'AF':
         continent_fi = "Afrikka"
@@ -402,7 +410,7 @@ def choose_airport(to_country):
     return airport, airport_ident, gameover3, continue_game
 
 
-def travel():
+def travel(start_continent):
     gameover_main = False
     while gameover_main == False:
 

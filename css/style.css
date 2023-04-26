@@ -22,12 +22,11 @@ main {
 
 #nav a {
     color: darkblue;
-    background: palevioletred;
-    width: 13rem;
+    background: #c8e3e3;
+    width: 15rem;
     line-height: 3rem;
-    justify-content: space-evenly;
-    padding: 0.8rem;
-    backdrop-filter: blur(2rem);
+    padding: 0.6rem;
+    border-radius: 10px;
 }
 
 #nav a:hover {
@@ -41,16 +40,33 @@ main {
 }
 
 #options {
-    width: 5rem;
+    width: 8rem;
     position: relative;
+    color: darkblue;
+    background-color: #c8e3e3;
+    line-height: 3rem;
+    padding: 0.6rem;
+    backdrop-filter: blur(2rem);
+    border-radius: 10px;
 }
 
 #options select {
     display: none;
 }
 
-#options-selected {
-    background-color: #a26b83;
+#options:hover {
+    color: #3c6091;
+    background: #a26b83;
+}
+#options option::before {
+    position: absolute;
+    color: darkblue;
+    background-color: palevioletred;
+}
+
+#options option:after {
+    color: darkblue;
+    background: mediumpurple;
 }
 
 

@@ -1,3 +1,9 @@
+import misc
+import time
+import random
+
+connection = misc.connection()
+
 def QuestionA(tehtävänanto, vaihtoehto1, vaihtoehto2,vaihtoehto3, aika):
     print()
     print("Painamalla Enter kesken vastaamisen näät kuluneen ajan.")
@@ -239,7 +245,7 @@ def pistelaskuri(kokonaispisteet_lista):
 
 def travel_questionsAF(planeNumber):
     sql = f"SELECT type, risk, questions FROM plane_info WHERE id = {planeNumber}"
-    print(sql)
+    # print(sql)
     cursor = connection.cursor()
     cursor.execute(sql)
     planelist_list = cursor.fetchall()

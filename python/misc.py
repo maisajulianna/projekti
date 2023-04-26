@@ -1,4 +1,5 @@
 import mysql.connector
+import time
 
 def connection():
     connection = mysql.connector.connect(
