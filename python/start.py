@@ -1,6 +1,7 @@
 import pygame
 import time
 import misc
+import sys
 
 connection = misc.connection()
 
@@ -135,6 +136,61 @@ def get_user():
                         need_input = False
                         user = get_user()  # Varoitus, rekursio!
     pygame.quit()
+    return user
+
+def start_print():
+    print(
+        "Tervetuloa maailmanympärysmatkalle! Tehtävänäsi on käydä jokaisessa maanosassa. "
+        "Pääset eteenpäin vastaamalla kysymyksiin.")
+    input("Oletko valmis? ")
+
+
+def start_game():
+    username = input("Anna haluamasi käyttäjänimi: ")
+    print()
+    print(f"Hei, {username}!")
+
+    sql = f"SELECT * FROM game WHERE screen_name = '{username}'"
+    cursor = connection.cursor()
+    cursor.execute(sql)
+    user = cursor.fetchall()
+    # print(user)
+
+    game_starts = False
+    while game_starts == False:
+        if not user:
+            print("Sinulla ei ole keskeneräistä peliä, uusi alkaa hetken kuluttua...")
+            sql = f"INSERT INTO game VALUES (NULL, 0, '{username}', 0, NULL, FALSE, FALSE, FALSE, FALSE, FALSE, FALSE, FALSE)"
+            cursor = connection.cursor()
+            cursor.execute(sql)
+            user = cursor.fetchone()
+            game_starts = True
+
+        else:
+            print("Sinulla on tallennettuna keskeneräinen peli. Haluatko...")
+            print("A: jatkaa vanhaa peliä")
+            print("B: aloittaa uuden pelin (poistaa vanhat tiedot)")
+            print("C: aloittaa uuden pelin eri käyttäjänimellä")
+            print()
+            answer = input("Vastauksesi: ").lower()
+
+            if answer == "a":
+                print("Aloitetaan peli!")
+                game_starts = True
+
+            elif answer == "b":
+                sql = "UPDATE game SET AF_= FALSE, AN_ = FALSE, AS_ = FALSE, " \
+                      "EU_= FALSE, NA_ = FALSE, OC_= FALSE, SA_ = FALSE, time_sec = 0, " \
+                      f"score = 0, last_location = NULL WHERE player_id = '{username}'"
+                cursor = connection.cursor()
+                cursor.execute(sql)
+                user = cursor.fetchall()
+                print("Tiedot päivitetty, aloitetaan peli !")
+                game_starts = True
+
+            elif answer == "c":
+                username = input("Anna haluamasi käyttäjänimi: ")
+
     return user
 
 

@@ -23,7 +23,7 @@ main {
 #nav a {
     color: darkblue;
     background: #c8e3e3;
-    width: 15rem;
+    width: 10rem;
     line-height: 3rem;
     padding: 0.6rem;
     border-radius: 10px;
@@ -44,9 +44,8 @@ main {
     position: relative;
     color: darkblue;
     background-color: #c8e3e3;
-    line-height: 3rem;
+    line-height: 5rem;
     padding: 0.6rem;
-    backdrop-filter: blur(2rem);
     border-radius: 10px;
 }
 
@@ -58,8 +57,7 @@ main {
     color: #3c6091;
     background: #a26b83;
 }
-#options option::before {
-    position: absolute;
+#options option {
     color: darkblue;
     background-color: palevioletred;
 }
@@ -70,10 +68,22 @@ main {
 }
 
 
+main section {
+    display: inline-block;
+    padding: 3rem;
+    border: 1px solid gray;
+    width: 50%;
+    margin: 2rem
+}
+
 #footer {
     color: #3f3f3f;
     background-color: #7c90a2;
     padding: 0.5rem;
     margin: 1rem;
     text-align: center;
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+    height: rem;
 }

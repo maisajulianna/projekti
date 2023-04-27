@@ -1,10 +1,10 @@
 import misc
-import sys
 import colorama
-from colorama import Fore, Back, Style
 import time
+from colorama import Fore, Style
 
 connection = misc.connection()
+
 
 def continent_name(continent_abbr):
     if continent_abbr == 'AF':
@@ -64,7 +64,7 @@ def user_continents(user):
     else:
         print(Fore.RED + "ETELÄ-AMERIKKA")
 
-    time.sleep(3)
+    time.sleep(1)
 
     print(Style.RESET_ALL)
 
@@ -89,25 +89,23 @@ def choose_plane():
         times += 1
 
     chosen = False
-    while chosen == False:
+    while chosen:
         chosen = True
-
         print()
-        plane = 0
-        planeNumber = int(input("Valitsemasi lentokoneen numero: "))
-        if planeNumber == 1:
+        plane_nr = int(input("Valitsemasi lentokoneen numero: "))
+        if plane_nr == 1:
             plane = planes[0]
             plane = plane[0]
             print(f"Valitsemasi lentokone on {plane}.")
-        elif planeNumber == 2:
+        elif plane_nr == 2:
             plane = planes[1]
             plane = plane[0]
             print(f"Valitsemasi lentokone on {plane}.")
-        elif planeNumber == 3:
+        elif plane_nr == 3:
             plane = planes[2]
             plane = plane[0]
             print(f"Valitsemasi lentokone on {plane}.")
-        elif planeNumber == 4:
+        elif plane_nr == 4:
             plane = planes[3]
             plane = plane[0]
             print(f"Valitsemasi lentokone on {plane}.")
@@ -122,7 +120,7 @@ def choose_plane():
             else:
                 print("Lopetit pelin.")
 
-        if planeNumber >= 1 and planeNumber <=4 :
+        if 1 <= plane_nr <= 4:
             print()
             print("Oletko tyytyväinen valintaasi?")
             confirmation = input("Valitse uudelleen painamalla mitä tahansa, varmista valinta painamalla Enter. ")
@@ -135,7 +133,7 @@ def choose_plane():
                 cursor = connection.cursor()
                 cursor.execute(sql)
                 planes = cursor.fetchall()
-    return planeNumber
+    return plane_nr
 
 
 def choose_start():
@@ -163,14 +161,14 @@ def choose_start():
         id += 1
 
     chosen = False
-    while chosen == False:
+    while not chosen:
         chosen = True
 
         print()
         airport_id = int(input("Valitsemasi lentokentän numero: "))
         airport = 0
 
-        if airport_id >= 1 and airport_id <= 6:
+        if 1 <= airport_id <= 6:
             index = airport_id - 1
             airport = airports[index][1]
             continent_abbr = airports[index][4]
@@ -187,7 +185,7 @@ def choose_start():
             else:
                 print("Lopetit pelin.")
 
-        if airport_id >= 1 and airport_id <= 6:
+        if 1 <= airport_id <= 6:
             print()
             print("Oletko tyytyväinen valintaasi?")
             confirmation = input("Valitse uudelleen painamalla mitä tahansa, varmista valinta painamalla Enter. ")
@@ -231,14 +229,14 @@ def choose_continent(from_continent):
         id += 1
 
     chosen = False
-    while chosen == False:
+    while not chosen:
         gameover1 = False
         print()
-        continentNro = int(input("Haluamasi maanosan numero: "))
+        continent_nro = int(input("Haluamasi maanosan numero: "))
         to_continent = 0
 
-        if continentNro >= 1 and continentNro <= 7:
-            index = continentNro - 1
+        if 1 <= continent_nro <= 7:
+            index = continent_nro - 1
             continents = continents[index]
             to_continent = continents[0]
             continent = continent_name(to_continent)
@@ -256,7 +254,7 @@ def choose_continent(from_continent):
                 chosen = True
                 gameover1 = True
 
-        if continentNro >= 1 and continentNro <=7 :
+        if 1 <= continent_nro <= 7:
             print()
             print("Oletko tyytyväinen valintaasi?")
             confirmation = input("Valitse uudelleen painamalla mitä tahansa, varmista valinta painamalla Enter. ")
@@ -273,7 +271,7 @@ def choose_continent(from_continent):
 
 
 def choose_country(to_continent):
-    #print(to_continent)
+    # print(to_continent)
     print()
     print("Valitse seuraavaksi maa.")
     print()
@@ -300,12 +298,12 @@ def choose_country(to_continent):
         gameover2 = False
         print()
         list_index = len(countries)
-        countryNro = int(input("Haluamasi maan numero: "))
+        country_nro = int(input("Haluamasi maan numero: "))
         to_country = 0
         # print(list_index)
 
-        if countryNro >= 1 and countryNro <= list_index:
-            index = countryNro - 1
+        if 1 <= country_nro <= list_index:
+            index = country_nro - 1
             countries = countries[index]
             to_country = countries[0]
             iso_country = countries[1]
@@ -323,7 +321,7 @@ def choose_country(to_continent):
                 chosen = True
                 gameover2 = True
 
-        if countryNro >= 1 and countryNro <= list_index:
+        if 1 <= country_nro <= list_index:
             print()
             print("Oletko tyytyväinen valintaasi?")
             confirmation = input("Valitse uudelleen painamalla mitä tahansa, varmista valinta painamalla Enter. ")
@@ -367,16 +365,16 @@ def choose_airport(to_country):
     chosen = False
     continue_game = False
 
-    while chosen == False:
+    while not chosen:
 
         print()
         list_index = len(airports_list)
         # print(list_index)
-        airportNro = int(input("Haluamasi lentokentän numero: "))
+        airport_nro = int(input("Haluamasi lentokentän numero: "))
         airport = 0
 
-        if airportNro >= 1 and airportNro <= list_index:
-            index = airportNro - 1
+        if 1 <= airport_nro <= list_index:
+            index = airport_nro - 1
             airports_list = airports_list[index]
             airport = airports_list[0]
             airport_ident = airports_list[1]
@@ -393,7 +391,7 @@ def choose_airport(to_country):
                 print("Lopetit pelin.")
                 gameover3 = True
 
-        if airportNro >= 1:
+        if airport_nro >= 1:
             print()
             print("Oletko tyytyväinen valintaasi?")
             confirmation = input("Valitse uudelleen painamalla mitä tahansa, varmista valinta painamalla Enter.")
@@ -412,18 +410,18 @@ def choose_airport(to_country):
 
 def travel(start_continent):
     gameover_main = False
-    while gameover_main == False:
+    while not gameover_main:
 
         result = choose_continent(start_continent)
         to_continent = result[0]
         gameover_main = result[1]
-        if gameover_main == True:
+        if gameover_main:
             break
 
         result = choose_country(to_continent)
         to_country = result[0]
         gameover_main = result[1]
-        if gameover_main == True:
+        if gameover_main:
             break
 
         result = choose_airport(to_country)
@@ -431,10 +429,10 @@ def travel(start_continent):
         airport_ident = result[1]
         gameover_main = result[2]
         continue_game1 = result[3]
-        if gameover_main == True:
+        if gameover_main:
             break
 
-        if continue_game1 == True:
+        if continue_game1:
             break
 
     return to_airport, airport_ident, to_continent, gameover_main

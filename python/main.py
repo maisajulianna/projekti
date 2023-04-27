@@ -2,6 +2,7 @@ import misc
 import start
 import choises
 import questions
+import time
 
 
 # alkumäärittelyjä
@@ -15,9 +16,10 @@ MainGameOver = False
 
 
 # asking username and welcoming player
-start.welcome()
-user = start.get_user()
-misc.timenoprint(1)
+print()
+start.start_print()
+user = start.start_game()
+time.sleep(1)
 
 
 # --- MAIN PELI:
