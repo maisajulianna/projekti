@@ -1,9 +1,10 @@
 import misc
+import connection
 import colorama
 import time
 from colorama import Fore, Style
 
-connection = misc.connection()
+connection = connection.connection()
 
 
 def continent_name(continent_abbr):
@@ -26,7 +27,7 @@ def continent_name(continent_abbr):
 
 def user_continents(user):
     colorama.init()
-
+    print(user)
     sql = f"SELECT * FROM game WHERE player_id = '{user[0]}'"
     cursor = connection.cursor()
     cursor.execute(sql)
@@ -89,23 +90,25 @@ def choose_plane():
         times += 1
 
     chosen = False
-    while chosen:
+    while chosen == False:
         chosen = True
+
         print()
-        plane_nr = int(input("Valitsemasi lentokoneen numero: "))
-        if plane_nr == 1:
+        plane = 0
+        planeNumber = int(input("Valitsemasi lentokoneen numero: "))
+        if planeNumber == 1:
             plane = planes[0]
             plane = plane[0]
             print(f"Valitsemasi lentokone on {plane}.")
-        elif plane_nr == 2:
+        elif planeNumber == 2:
             plane = planes[1]
             plane = plane[0]
             print(f"Valitsemasi lentokone on {plane}.")
-        elif plane_nr == 3:
+        elif planeNumber == 3:
             plane = planes[2]
             plane = plane[0]
             print(f"Valitsemasi lentokone on {plane}.")
-        elif plane_nr == 4:
+        elif planeNumber == 4:
             plane = planes[3]
             plane = plane[0]
             print(f"Valitsemasi lentokone on {plane}.")
@@ -120,7 +123,7 @@ def choose_plane():
             else:
                 print("Lopetit pelin.")
 
-        if 1 <= plane_nr <= 4:
+        if planeNumber >= 1 and planeNumber <=4 :
             print()
             print("Oletko tyytyväinen valintaasi?")
             confirmation = input("Valitse uudelleen painamalla mitä tahansa, varmista valinta painamalla Enter. ")
@@ -133,7 +136,7 @@ def choose_plane():
                 cursor = connection.cursor()
                 cursor.execute(sql)
                 planes = cursor.fetchall()
-    return plane_nr
+    return planeNumber
 
 
 def choose_start():

@@ -2,8 +2,9 @@ import pygame
 import time
 import misc
 import sys
+import connection
 
-connection = misc.connection()
+connection = connection.connection()
 
 def print_text(screen, message, x, y, font_color=(0,0,0),
                font_type="images/magneto_bold.ttf", font_size=20):
@@ -154,14 +155,15 @@ def start_game():
     cursor = connection.cursor()
     cursor.execute(sql)
     user = cursor.fetchall()
-    # print(user)
 
     game_starts = False
     while game_starts == False:
         if not user:
+            cursor = connection.cursor()
             print("Sinulla ei ole keskeneräistä peliä, uusi alkaa hetken kuluttua...")
             sql = f"INSERT INTO game VALUES (NULL, 0, '{username}', 0, NULL, FALSE, FALSE, FALSE, FALSE, FALSE, FALSE, FALSE)"
-            cursor = connection.cursor()
+            cursor.execute(sql)
+            sql = f"SELECT * FROM game WHERE screen_name = '{username}'"
             cursor.execute(sql)
             user = cursor.fetchone()
             game_starts = True
@@ -179,12 +181,14 @@ def start_game():
                 game_starts = True
 
             elif answer == "b":
-                sql = "UPDATE game SET AF_= FALSE, AN_ = FALSE, AS_ = FALSE, " \
+                sql = "UPDATE game SET AF_ = FALSE, AN_ = FALSE, AS_ = FALSE, " \
                       "EU_= FALSE, NA_ = FALSE, OC_= FALSE, SA_ = FALSE, time_sec = 0, " \
                       f"score = 0, last_location = NULL WHERE player_id = '{username}'"
-                cursor = connection.cursor()
+                # cursor = connection.cursor()
                 cursor.execute(sql)
-                user = cursor.fetchall()
+                sql = f"SELECT * FROM game WHERE screen_name = '{username}'"
+                cursor.execute(sql)
+                user = cursor.fetchone()
                 print("Tiedot päivitetty, aloitetaan peli !")
                 game_starts = True
 

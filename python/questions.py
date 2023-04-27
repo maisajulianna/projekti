@@ -1,8 +1,8 @@
-import misc
 import time
 import random
+import connection
 
-connection = misc.connection()
+connection = connection.connection()
 
 def QuestionA(tehtävänanto, vaihtoehto1, vaihtoehto2,vaihtoehto3, aika):
     print()

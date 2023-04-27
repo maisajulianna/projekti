@@ -1,89 +1,27 @@
-html {
-    background-color: lightsteelblue;
-    font-size: 1rem;
-    font-family: Arial, Helvetica, sans-serif;
+#map {
+    position: absolute;
+    top: 0;
+    bottom: 50%;
+    left: 0;
+    right: 0;
 }
 
-.container {
+    /*leaf dots style*/
+.blueIcon{
+    background-color: deepskyblue;
+    border-radius: 50%;
+    border: 5px solid rgba(255, 255, 255, 0.5);
 }
 
-#header {
-    color: #3f3f3f;
-    background-color: slategray;
-    padding: 2rem;
-    text-align: left;
+.greenIcon{
+    background-color: greenyellow;
+    border-radius: 50%;
+    border: 5px solid rgba(255, 255, 255, 0.5);
 }
 
-main {
-    display: flex;
-    width: 80%;
-    margin: auto;
-}
-
-#nav a {
-    color: darkblue;
-    background: #c8e3e3;
-    width: 10rem;
-    line-height: 3rem;
-    padding: 0.6rem;
-    border-radius: 10px;
-}
-
-#nav a:hover {
-    color: #3c6091;
-    background: #a26b83;
-}
-
-#nav a:focus {
-    color: darkblue;
-    background: mediumpurple;
-}
-
-#options {
-    width: 8rem;
-    position: relative;
-    color: darkblue;
-    background-color: #c8e3e3;
-    line-height: 5rem;
-    padding: 0.6rem;
-    border-radius: 10px;
-}
-
-#options select {
-    display: none;
-}
-
-#options:hover {
-    color: #3c6091;
-    background: #a26b83;
-}
-#options option {
-    color: darkblue;
-    background-color: palevioletred;
-}
-
-#options option:after {
-    color: darkblue;
-    background: mediumpurple;
-}
-
-
-main section {
-    display: inline-block;
-    padding: 3rem;
-    border: 1px solid gray;
-    width: 50%;
-    margin: 2rem
-}
-
-#footer {
-    color: #3f3f3f;
-    background-color: #7c90a2;
-    padding: 0.5rem;
-    margin: 1rem;
-    text-align: center;
-    position: fixed;
-    bottom: 0;
-    width: 100%;
-    height: rem;
+.goals{
+    position: absolute;
+    top: 50%;
+    left: 0;
+    right: 0;
 }

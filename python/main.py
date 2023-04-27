@@ -3,16 +3,16 @@ import start
 import choises
 import questions
 import time
+import connection
 
 
 # alkumäärittelyjä
-connection = misc.connection()
+connection = connection.connection()
 
 kokonaispisteet_lista = []
 kokonaispisteet_summa = 0
 aikaakulunut = 0
 MainGameOver = False
-
 
 
 # asking username and welcoming player

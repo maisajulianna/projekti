@@ -1,21 +1,8 @@
-import mysql.connector
-import time
 import choises
 import start
+import connection
 
-
-def connection():
-    connection_ = mysql.connector.connect(
-        host='127.0.0.1',
-        port=3306,
-        database='flight_game',
-        user="userN",
-        password="1234",
-        autocommit=True)
-    return connection_
-
-
-connection = connection()
+connection = connection.connection()
 
 
 def delete_game(user):
