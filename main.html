@@ -4,16 +4,28 @@
     <meta charset="UTF-8">
     <meta name="insert name here"
           content="insert content description here"/>
-    <title>name</title>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.8.0/dist/leaflet.css"/>
+
+    <title>21</title>
     <link rel="stylesheet" href="css/style2.css"/>
+    <link rel="shortcut icon" href="#">
+    <link href="css/style.css" rel="stylesheet">
+
+    <script src="https://unpkg.com/leaflet@1.8.0/dist/leaflet.js" defer></script>
+    <script type="module" src="https://cdn.jsdelivr.net/npm/ionicons/dist/ionicons/ionicons.esm.js" defer></script>
+    <script nomodule src="https://cdn.jsdelivr.net/npm/ionicons/dist/ionicons/ionicons.js" defer></script>
+    <script src="js/main.js" defer></script>
     <script src="js/esimerkki.js" defer></script>
+
 </head>
 <body>
 
 <div class="container">
     <header id="header">
         <nav id="nav">
-            <h1>Pelin nimi</h1>
+            <h1 id="title">21</h1>
             <a title="home" href="main.html">HOME</a>
             <a title="map" href="map.html">MAP</a>
             <select id="options">
@@ -28,8 +40,8 @@
 
 
     <main>
-        <section id="left">
-            <article id="map">
+        <section id="map">
+            <article>
                 <figure>
                 <img src="img/map1" alt="map" title="map">
                 <figcaption>kuvateksti</figcaption>
@@ -43,8 +55,14 @@
         </section>
     </main>
 
-    <footer id="footer">
-        <h3>hi:)</h3>
+    <footer class="goals">
+        <figure id="As"><figcaption>asia</figcaption></figure>
+        <figure id="Eu"><figcaption>europe</figcaption></figure>
+        <figure id="Na"><figcaption>north<br>america</figcaption></figure>
+        <figure id="Pa"><figcaption>south<br>america </figcaption></figure>
+        <figure id="Em"><figcaption>antarctica</figcaption></figure>
+        <figure id="Oc"><figcaption>australia</figcaption></figure>
+        <figure id="Af"><figcaption>africa</figcaption></figure>
     </footer>
 
 </div>

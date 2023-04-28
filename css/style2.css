@@ -20,7 +20,7 @@ main {
     margin: auto;
 }
 
-#nav a {
+#nav a, #title {
     color: darkblue;
     background: #c8e3e3;
     width: 10rem;
@@ -69,21 +69,52 @@ main {
 
 
 main section {
+    position: ;
     display: inline-block;
     padding: 3rem;
     border: 1px solid gray;
-    width: 50%;
     margin: 2rem
 }
 
-#footer {
+#map {
+    width: 60%;
+}
+
+#right {
+    width: 40%;
+}
+
+
+footer {
+    display: flex;
     color: #3f3f3f;
     background-color: #7c90a2;
-    padding: 0.5rem;
     margin: 1rem;
-    text-align: center;
     position: fixed;
     bottom: 0;
     width: 100%;
-    height: rem;
+    height: 8rem;
+}
+
+
+footer figure {
+    color: darkblue;
+    background: #de4444;
+    width: 14%;
+    line-height: 3rem;
+    padding: 2rem;
+    text-align: center;
+}
+
+
+.blueIcon{
+    background-color: deepskyblue;
+    border-radius: 50%;
+    border: 5px solid rgba(255, 255, 255, 0.5);
+}
+
+.greenIcon{
+    background-color: greenyellow;
+    border-radius: 50%;
+    border: 5px solid rgba(255, 255, 255, 0.5);
 }
