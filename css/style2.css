@@ -16,6 +16,7 @@ html {
 
 main {
     display: flex;
+    position: absolute;
     width: 80%;
     margin: auto;
 }
@@ -57,6 +58,7 @@ main {
     color: #3c6091;
     background: #a26b83;
 }
+
 #options option {
     color: darkblue;
     background-color: palevioletred;
@@ -67,13 +69,11 @@ main {
     background: mediumpurple;
 }
 
-
 main section {
-    position: ;
     display: inline-block;
     padding: 3rem;
     border: 1px solid gray;
-    margin: 2rem
+    margin: 2rem;
 }
 
 #map {
@@ -85,7 +85,7 @@ main section {
 }
 
 
-footer {
+.goals {
     display: flex;
     color: #3f3f3f;
     background-color: #7c90a2;
@@ -107,13 +107,13 @@ footer figure {
 }
 
 
-.blueIcon{
+.blueIcon {
     background-color: deepskyblue;
     border-radius: 50%;
     border: 5px solid rgba(255, 255, 255, 0.5);
 }
 
-.greenIcon{
+.greenIcon {
     background-color: greenyellow;
     border-radius: 50%;
     border: 5px solid rgba(255, 255, 255, 0.5);
