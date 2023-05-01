@@ -131,5 +131,3 @@ async function gameSetup() {
 // this is the main function that creates the game and calls the other functions
 
 gameSetup();
-
-// event listener to hide goal splash
