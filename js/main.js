@@ -1,6 +1,8 @@
 'use strict';
 /*1. show map using Leaflet library. (L comes from the Leaflet library) */
 
+let L;
+
 const map = L.map('map', {tap: false});
 L.tileLayer('https://{s}.google.com/vt/lyrs=s&x={x}&y={y}&z={z}', {
   maxZoom: 20,
@@ -8,29 +10,27 @@ L.tileLayer('https://{s}.google.com/vt/lyrs=s&x={x}&y={y}&z={z}', {
 }).addTo(map);
 map.setView([60, 24], 7);
 
+
 //shake answers
 function shuffleList(list) {
   for (let i = list.length - 1; i > 0; i--) {
-    var randomIndex = Math.floor(Math.random() * (i + 1));
-    var temp = list[i];
+    const randomIndex = Math.floor(Math.random() * (i + 1));
+    const temp = list[i];
     list[i] = list[randomIndex];
     list[randomIndex] = temp;
   }
   return list;
 }
 
-//get question from our API (a little bit stupid, but it for study purposes)
 
 // global variables
 //http://127.0.0.1:5000'
 
 // icons
-
 const blueIcon = L.divIcon({className: 'blueIcon'});
 const greenIcon = L.divIcon({className: 'greenIcon'});
 
 // form for player name
-
 // function to fetch data from API
 async function getData(url) {
   const response = await fetch(url);
@@ -41,16 +41,12 @@ async function getData(url) {
 
 // function to update game status
 // satus = {}
-function updateStatus(status){
+function updateStatus(status) {
 
 }
 
-// function to show weather at selected airport
-
 // function to check if any goals have been reached
-
 // function to update goal data and goal table in UI
-
 // function to check if game is over
 
 // function to set up game
@@ -82,7 +78,7 @@ async function gameSetup() {
           const randomQuestion = {
             'status': 200,
             'id': 21,
-            'question': 'Paljonko on Etel\u00e4mantereen mannerj\u00e4\u00e4n keskim\u00e4\u00e4r\u00e4inen paksuus?',
+            'question': 'Paljonko on Etelämantereen mannerjäänn keskimääräinen paksuus?',
             'right_option': '2,5km',
             'wrong_option_1': '1,4km',
             'wrong_option_2': '4,1km',
@@ -95,15 +91,14 @@ async function gameSetup() {
           const pQuestion = document.createElement('p');
           pQuestion.innerHTML = randomQuestion.question;
 
-          const flyButton = document.createElement("button");
-          flyButton.innerHTML = "FLY!"
-          flyButton.classList.add("flyButton");
+          const flyButton = document.createElement('button');
+          flyButton.innerHTML = 'FLY!';
+          flyButton.classList.add('flyButton');
 
           const formContainer = document.createElement('div'); // Add a container div for form elements
           formContainer.appendChild(pQuestion); // Append the p element to the container div
           formContainer.appendChild(qForm); // Append the select element to the container div
           formContainer.appendChild(flyButton); //Append button
-
 
           const rightOption = randomQuestion.right_option;
           const shList = shuffleList([
