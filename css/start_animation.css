@@ -1,59 +1,65 @@
 
 body {
-  background-image: url(clouda.jpg);
-  background-size: cover;
+    background-image: url(clouda.jpg);
+    background-size: cover;
 }
 
-		#animation-container {
-			position: relative;
-			width: 1500px;
-			height: 800px;
-			overflow: hidden;
-		}
-		#animation-container img {
-			position: absolute;
-			top: 30px;
-			left: -80%;
-			width: 80%;
-			height: 80%;
-			object-fit: cover;
-			animation: move 7s reverse infinite;
-		}
-		#animation-container .text-box {
-			position: absolute;
-			top: 50%;
-			left: 50%;
-			transform: translate(-50%, -50%);
-			padding: 20px;
-			background-color: rgba(255, 255, 255, 0.7);
-			border-radius: 5px;
-			box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.3);
-			animation: backwards;
-		}
-		.button {
-			position: center;
-			display: inline-block;
-			padding: 12px 24px;
-			background-color: #4CAF50;
-			color: white;
-			text-decoration: NONE;
-			border-radius: 4px;
-			animation: fade 3s infinite;
+#animation-container {
+    position: relative;
+    width: 1500px;
+    height: 800px;
+    overflow: hidden;
+	text-align: center;
 }
-		@keyframes move {
-			0% {
-				transform: translateX(300%);
-			}
-			100% {
-				transform: translateX(0);
-			}
-		}
-		@keyframes fade {
-			0%, 100% {
-				opacity: 0;
-			}
-			50% {
-				opacity: 1;
-			}
-		}
+
+#animation-container img {
+    position: absolute;
+    top: 30px;
+    left: -80%;
+    width: 80%;
+    height: 80%;
+    object-fit: cover;
+    animation: move 7s reverse infinite;
+}
+
+#animation-container .text-box {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    padding: 20px;
+    background-color: rgba(255, 255, 255, 0.7);
+    border-radius: 5px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+    animation: backwards;
+}
+
+.button {
+    position: center;
+    display: inline-block;
+    padding: 12px 24px;
+    background-color: #4CAF50;
+    color: white;
+    text-decoration: NONE;
+    border-radius: 4px;
+    animation: fade 3s infinite;
+}
+
+@keyframes move {
+    0% {
+        transform: translateX(300%);
+    }
+    100% {
+        transform: translateX(0);
+    }
+}
+
+@keyframes fade {
+    0%, 100% {
+        opacity: 0;
+    }
+    50% {
+        opacity: 1;
+    }
+}
 
