@@ -57,7 +57,7 @@ html, body {
     background-color: slategray;
     color: #383838;
     vertical-align: middle;
-    padding: 1rem;
+    padding: 0.5rem;
 }
 
 .header h1 {
@@ -71,10 +71,11 @@ ul {
 }
 
 main {
-    height: 20rem;
+    height: 28rem;
     margin: 2rem;
     padding: 1rem;
 }
+
 #map {
     border: 1px solid #383838;
     padding: 2rem;
@@ -154,13 +155,13 @@ main {
 
 /* map things */
 
-.blueIcon {
+.blue-icon {
     background-color: deepskyblue;
     border-radius: 50%;
     border: 5px solid rgba(255, 255, 255, 0.5);
 }
 
-.greenIcon {
+.green-icon {
     background-color: greenyellow;
     border-radius: 50%;
     border: 5px solid rgba(255, 255, 255, 0.5);
@@ -194,4 +195,85 @@ main {
 .formConteiner {
     background-color: whitesmoke;
     padding: 0;
+}
+
+
+#player-modal {
+    width: 100vw;
+    height: 100vh;
+    background-color: rgba(0, 0, 0, 0.8);
+    position: absolute;
+    top: 0;
+    z-index: 9999;
+}
+
+
+#player-form input {
+    padding: 1rem;
+}
+
+#player-form {
+    display: block;
+    width: 50%;
+    margin: 4rem auto;
+    flex-direction: column;
+}
+
+.lasi-container {
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 9999;
+    display: none;
+    line-height: 4rem;
+    text-align: center;
+
+}
+
+.lasi-text {
+    color: orangered;
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 9999;
+    display: none;
+    line-height: 4rem;
+    text-align: center;
+
+}
+
+.lasi-container img {
+    max-width: 100%;
+}
+
+
+@keyframes gameover {
+    0% {
+        transform: scale(2);
+    }
+    50% {
+        transform: scale(3);
+    }
+    100% {
+        transform: scale(2);
+    }
+}
+
+#gameover {
+    position: absolute;
+    top: 40%;
+    left: 38%;
+    transform: translate(-50%, -50%);
+    padding: 20px;
+    background-color: #a26b83;
+    border: 1px solid black;
+    border-radius: 50px;
+    animation-name: gameover;
+    animation-duration: 2s;
+    animation-iteration-count: 10000;
+    animation-timing-function: ease-in-out;
+    text-align: center;
+    font-size: 36px;
+    font-weight: bold;
+    color: black;
 }

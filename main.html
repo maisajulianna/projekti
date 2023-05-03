@@ -5,7 +5,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.8.0/dist/leaflet.css"/>
+    <link rel="stylesheet" href="https:unpkg.com/leaflet@1.8.0/dist/leaflet.css"/>
     <link rel="shortcut icon" href="#">
     <link rel="stylesheet" href="css/style.css">
 
@@ -36,22 +36,28 @@
 
     <footer class="footer">
         <table class="space-evenly">
-            <td class="goal" id="AS">AS</td>
-            <td class="goal" id="EU">EU</td>
-            <td class="goal" id="NA">NA</td>
-            <td class="goal" id="SA">SA</td>
-            <td class="goal" id="AN">AN</td>
-            <td class="goal" id="OC">OC</td>
-            <td class="goal" id="AF">AF</td>
+            <td class="goal" id="AS_">AS</td>
+            <td class="goal" id="EU_">EU</td>
+            <td class="goal" id="NA_">NA</td>
+            <td class="goal" id="SA_">SA</td>
+            <td class="goal" id="AN_">AN</td>
+            <td class="goal" id="OC_">OC</td>
+            <td class="goal" id="AF_">AF</td>
         </table>
     </footer>
 </div>
 
-<div id="username" class="hide">
-    <form id="user-form">
-        <input type="text" placeholder="username" required>
-        <input type="submit" value="save" id="submit">
+<div id="player-modal">
+    <form id="player-form">
+        <input id="player-input" type="text" placeholder="Player name" required>
+        <input type="submit" value="Start game">
     </form>
+</div>
+
+
+<div class="lasi-container">
+    <h2 class="lasi-text">UPS... vastaus meni väärin...</h2>
+    <img src="img/lasi.png" alt="broken lasi">
 </div>
 
 </body>
